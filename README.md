@@ -21,7 +21,7 @@ Jenkins: 1.654
 ##실행 방법
 
 ### 1. Git clone 
- 이클립스의 git repository창에서 git clone을 한 다음 project explorer에 import한다.
+ 이클립스의 git repository 창에서 git clone을 한 다음 project를 import하면 project explorer 창에 import된다. 
 
 ### 2. Junit Test 
  test파일을 실행할 때 junit test로 실행한다.
