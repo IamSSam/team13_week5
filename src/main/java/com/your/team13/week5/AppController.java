@@ -5,14 +5,13 @@ import java.util.logging.Logger;
 
 public class AppController {
 	private static final Logger logger = Logger.getLogger("PrintBill");
-	private StringBuffer buf;
+	private StringBuilder buf;
 
 	Plan plan;
 	Customer customer;
 	Calculate calculate;
 
 	public AppController() {
-
 	}
 
 	public void run(String inputPlan, int callTime, int lineNumber) {
@@ -28,9 +27,9 @@ public class AppController {
 	}
 
 	public Plan getPlan(String inputPlan) {
-		if ("gold".equals(inputPlan.toLowerCase())) {
+		if ("gold".equalsIgnoreCase(inputPlan)) {
 			this.plan = new Gold();
-		} else if ("silver".equals(inputPlan.toLowerCase())) {
+		} else if ("silver".equalsIgnoreCase(inputPlan)) {
 			this.plan = new Silver();
 		}
 
@@ -38,7 +37,7 @@ public class AppController {
 	}
 
 	public String printBill() {
-		buf = new StringBuffer("\n===============================\n");
+		buf = new StringBuilder("\n===============================\n");
 		buf.append("\t\t<Phone Bill>\n\n");
 		buf.append("Plan : " + customer.getPlan().getPlanName() + "\n");
 		buf.append("Minutes Used : " + customer.getCallTime() + "\n");
