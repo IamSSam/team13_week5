@@ -7,6 +7,8 @@ import org.junit.Test;
 
 public class BillTest {
 	private AppController app;
+	private static final String GOLD = "Gold";
+	private static final String SILVER = "Silver";
 	
 	@Before
 	public void setUp() {
@@ -23,7 +25,7 @@ public class BillTest {
 	public void testGoldOne() {
 		// Gold Plan, Not Excess Minute, Not Additional Line
 		
-		input("Gold", 800, 1);
+		input(GOLD, 800, 1);
 		assertEquals(49.95, app.calculate.totalRate(), 0);
 	}
 	
@@ -31,7 +33,7 @@ public class BillTest {
 	public void testGoldTwo() {
 		// Gold Plan, Not Excess Minute, Additional Line
 		
-		input("Gold", 800, 3);
+		input(GOLD, 800, 3);
 		assertEquals(78.95, app.calculate.totalRate(), 0);
 	}
 	
@@ -39,7 +41,7 @@ public class BillTest {
 	public void testGoldThree() {
 		// Gold Plan, Not Excess Minute, Additional Line, Family Discount
 		
-		input("Gold", 800, 4);
+		input(GOLD, 800, 4);
 		assertEquals(83.95, app.calculate.totalRate(), 0);
 	}
 	
@@ -47,7 +49,7 @@ public class BillTest {
 	public void testGoldFour() {
 		// Gold Plan, Excess Minute, Not Additional Line
 		
-		input("Gold", 1200, 1);
+		input(GOLD, 1200, 1);
 		assertEquals(139.95, app.calculate.totalRate(), 0);
 	}
 	
@@ -55,7 +57,7 @@ public class BillTest {
 	public void testGoldFive() {
 		// Gold Plan, Excess Minute, Additional Line
 		
-		input("Gold", 1200, 3);
+		input(GOLD, 1200, 3);
 		assertEquals(168.95, app.calculate.totalRate(), 0);
 	}
 	
@@ -63,7 +65,7 @@ public class BillTest {
 	public void testGoldSix() {
 		// Gold Plan, Excess Minute, Additional Line, Family Discount
 		
-		input("Gold", 1200, 4);
+		input(GOLD, 1200, 4);
 		assertEquals(173.95, app.calculate.totalRate(), 0);
 	}
 	
@@ -71,7 +73,7 @@ public class BillTest {
 	public void testSilverOne() {
 		// Silver Plan, Not Excess Minute, Not Additional Line
 		
-		input("Silver", 300, 1);
+		input(SILVER, 300, 1);
 		assertEquals(29.95, app.calculate.totalRate(), 0);
 	}
 	
@@ -79,7 +81,7 @@ public class BillTest {
 	public void testSilverTwo() {
 		// Silver Plan, Not Excess Minute, Additional Line
 		
-		input("Silver", 300, 3);
+		input(SILVER, 300, 3);
 		assertEquals(72.95, app.calculate.totalRate(), 0);
 	}
 	
@@ -87,7 +89,7 @@ public class BillTest {
     public void testSilverThree() {
 		// Silver Plan, Not Excess Minute, Additional Line, Family Discount
     	
-    	input("Silver", 300, 4);
+    	input(SILVER, 300, 4);
     	assertEquals(77.95, app.calculate.totalRate(), 0);
     }
     
@@ -95,7 +97,7 @@ public class BillTest {
     public void testSilverFour() {
 	   // Silver Plan, Excess Minute, Not Additional Line
   
-       input("Silver", 600, 1);
+       input(SILVER, 600, 1);
        assertEquals(83.95, app.calculate.totalRate(), 0);
     }
     
@@ -103,7 +105,7 @@ public class BillTest {
     public void testSilverFive() {
 	   // Silver Plan, Excess Minute, Additional Line
        
-       input("Silver", 600, 3);
+       input(SILVER, 600, 3);
        assertEquals(126.95, app.calculate.totalRate(), 0);
     }
     
@@ -111,7 +113,7 @@ public class BillTest {
     public void testSilverSix() {
 	   // Silver Plan, Excess Minute, Additional Line, Family Discount
        
-       input("Silver", 600, 4);
+       input(SILVER, 600, 4);
        assertEquals(131.95, app.calculate.totalRate(), 0);
     }
 	

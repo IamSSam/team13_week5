@@ -1,7 +1,7 @@
 package com.your.team13.week5;
 
 public class Main {
-	public Main() {
+	private Main() {
 		
 	}
 	
